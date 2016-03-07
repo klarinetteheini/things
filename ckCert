@@ -1,0 +1,5 @@
+#!/bin/sh
+
+x509_args="-subject -issuer -fingerprint -enddate -noout"
+
+openssl s_client -connect $1 -tls1 < /dev/null | openssl x509 ${x509_args}
